@@ -1,0 +1,141 @@
+<html>
+<title>Izart.Photo | Cek Harga</title>
+<center>
+<body bgcolor="black">
+<img src="izart.png"width=400></td>
+</center>
+<hr>
+<form name=form>
+<table border=0>
+	<tr><td><font color="white">Category Gambar :<font color="white">
+	<td><center><font color="white">Smoke Splash
+	<td><center><font color="white">Color Splash
+	<td><center><font color="white">Mozaik
+	<td><center><font color="white">Siluet
+	<td><center><font color="white">Smudge Art
+	<td><center><font color="white">Sketch Color
+	<td><center><font color="white">Cartoon
+		<tr><td><td><img src="1.jpg" width=150 height=150>
+		<td><img src="2.jpg" width=150 height=150>
+		<td><img src="3.jpg" width=150 height=150>
+		<td><img src="4.jpg" width=150 height=150>
+		<td><img src="5.jpg" width=150 height=150>
+		<td><img src="6.jpg" width=150 height=150>
+		<td><img src="7.jpg" width=150 height=150>
+		<tr><td><td><center><input name=gambar type=radio value=30000>
+		<td><center><input name=gambar type=radio value=30000>
+		<td><center><input name=gambar type=radio value=30000>
+		<td><center><input name=gambar type=radio value=30000>
+		<td><center><input name=gambar type=radio value=30000>
+		<td><center><input name=gambar type=radio value=30000>
+		<td><center><input name=gambar type=radio value=30000>
+</table>
+<table border=0>
+	<tr><td><font color="white">Wajah Dalam Frame<td><font color="white">:
+		<select name=wajah>
+		<option>1 Wajah
+		<option>2 Wajah
+		<option>3 Wajah
+		<option>4 Wajah
+		<td><font color="white">(Hanya Untuk Siluet, Smudge Art, Sketch Color, Cartoon)
+	<tr><td><font color="white">Warna Frame<td><font color="white">:
+		<input name=wframe type=radio value="Hitam"><font color="white">Hitam
+		<td><input name=wframe type=radio value="Putih"><font color="white">Putih
+	<tr><td><font color="white">Ukuran Frame<td><font color="white">:
+		<select name=uframe>
+		<option>5R
+		<option>10R
+		<option>12R
+</table>
+<hr>
+<center>
+<table border=0>
+	<tr><td><font color="white">Harga Softfile<td><font color="white">:<td>
+		<input name=softfile>
+	<tr><td><font color="white">Nambah Wajah<td><font color="white">:<td>
+		<input name=nambahw>
+	<tr><td><font color="white">Warna Frame<td><font color="white">:<td>
+		<input name=frame>
+	<tr><td><font color="white">Ukuran Frame<td><font color="white">:<td>
+		<input name=ukuran>
+	<tr><td><font color="white">Total Harga<td><font color="white">:<td>
+		<input name=total>
+</table>
+<br>
+	<input type=button value="Proses" onclick="proses()">
+	<input type=reset value=reset>
+</form>
+<script>
+function proses()
+{
+ //category
+
+ var softfile= parseInt(document.form.gambar.value);
+ {
+	 if(document.form.gambar[0].checked) gambar = document.form.gambar[0].value;
+	 if(document.form.gambar[1].checked) gambar = document.form.gambar[1].value;
+	 if(document.form.gambar[2].checked) gambar = document.form.gambar[2].value;
+	 if(document.form.gambar[3].checked) gambar = document.form.gambar[3].value;
+	 if(document.form.gambar[4].checked) gambar = document.form.gambar[4].value;
+	 if(document.form.gambar[5].checked) gambar = document.form.gambar[5].value;
+	 if(document.form.gambar[6].checked) gambar = document.form.gambar[6].value;
+ }
+ //nambah wajah
+ var wajah=document.form.wajah.value;
+ var Siluet=document.form.gambar[3].checked;
+ var Smudge=document.form.gambar[4].checked;
+ var Sketch=document.form.gambar[5].checked;
+ var Cartoon=document.form.gambar[6].checked;
+ if(wajah == "1 Wajah")
+ {
+    nambahw = 0;
+ }
+ if(wajah == "2 Wajah")
+ {
+	if(Siluet) nambahw = 5000;
+	if(Smudge) nambahw = 10000;
+	if(Sketch) nambahw = 10000;
+	if(Cartoon) nambahw = 10000;
+ }
+ if(wajah == "3 Wajah")
+ {
+	if(Siluet) nambahw = 10000;
+	if(Smudge) nambahw = 20000;
+	if(Sketch) nambahw = 2000;
+	if(Cartoon) nambahw = 20000;
+ }
+ if(wajah == "4 Wajah")
+ {
+	if(Siluet) nambahw = 15000;
+	if(Smudge) nambahw = 30000;
+	if(Sketch) nambahw = 3000;
+	if(Cartoon) nambahw = 30000;
+ }
+ //warna frame
+ var frame=document.form.wframe.value;
+ 
+ //ukuran frame
+ var uframe = document.form.uframe.value;
+ if(uframe == "5R")
+ {
+	ukuran = 25000;
+ }
+ if(uframe == "10R")
+ {
+	ukuran = 40000;
+ }
+ if(uframe == "12R")
+ {
+	ukuran = 100000;
+ }
+ //total harga
+ var total =(softfile+nambahw+ukuran);
+ //tampil
+ document.form.softfile.value=softfile;
+ document.form.nambahw.value=nambahw;
+ document.form.frame.value=frame;
+ document.form.ukuran.value=ukuran;
+ document.form.total.value=total;
+}
+</script>
+</html>
